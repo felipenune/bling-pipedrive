@@ -1,6 +1,5 @@
 export interface IDeal {
   deal_id: number;
-  person_id?: number;
   org_id?: number;
   stage_id?: number;
   title: string;
@@ -50,12 +49,22 @@ export interface IDeal {
   formatted_weighted_value?: string;
   weighted_value_currency?: string;
   rotten_time?: string;
-  owner_name?: string;
+  owner_name: string;
   cc_email: string;
   org_hidden?: boolean;
   person_hidden?: boolean;
+  contact_email?: string;
+  contact_phone?: string;
 }
 
 export interface IDealReturn extends IDeal {
   id: number;
+  person_id: {
+    email: [
+      { value: string }
+    ],
+    phone: [
+      { value: string }
+    ]
+  }
 }

@@ -1,5 +1,5 @@
 import { getMongoRepository, MongoRepository } from "typeorm";
-import { IDeal, IDealReturn } from "../dtos/IDeal";
+import { IDeal } from "../dtos/IDeal";
 import IDealRepository from "../dtos/IDealRepository";
 import { Deal } from "../schemas/Deal";
 
@@ -16,6 +16,10 @@ export default class DealRepository implements IDealRepository {
     value,
     org_name,
     cc_email,
+    owner_name,
+    person_name,
+    contact_email,
+    contact_phone,
   }: IDeal): Promise<Deal> {
     const deal = this.ormRepository.create({
       deal_id,
@@ -23,6 +27,10 @@ export default class DealRepository implements IDealRepository {
       value,
       org_name,
       cc_email,
+      owner_name,
+      contact: person_name,
+      contact_email,
+      contact_phone,
     })
 
     await this.ormRepository.save(deal);

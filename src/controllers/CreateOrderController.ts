@@ -45,6 +45,10 @@ export default class CreateOrderController {
           value: deal.value,
           org_name: deal.org_name,
           cc_email: deal.cc_email,
+          owner_name: deal.owner_name,
+          person_name: deal.person_name,
+          contact_email: deal.person_id && deal.person_id.email[0].value ,
+          contact_phone: deal.person_id && deal.person_id.phone[0].value,
         })
       }
       

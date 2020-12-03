@@ -10,6 +10,18 @@ id: ObjectID;
 deal_id: number;
 
 @Column()
+owner_name: string;
+
+@Column()
+contact: string;
+
+@Column()
+contact_email: string;
+
+@Column()
+contact_phone: string;
+
+@Column()
 title: string;
 
 @Column()
