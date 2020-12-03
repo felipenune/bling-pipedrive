@@ -1,18 +1,17 @@
 import express from 'express';
 import "reflect-metadata";
 import bodyParser from 'body-parser'
-import CreateOrderController from './controllers/CreateOrderController';
+import 'dotenv/config';
 
 import './connection'
-
-const createOrder = new CreateOrderController();
+import routes from './routes/index.routes';
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/order', createOrder.create)
+app.use(routes);
 
 
 app.listen(3333)

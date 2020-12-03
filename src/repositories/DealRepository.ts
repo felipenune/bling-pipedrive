@@ -1,5 +1,5 @@
 import { getMongoRepository, MongoRepository } from "typeorm";
-import { IDeal } from "../dtos/IDeal";
+import { IDeal, IDealReturn } from "../dtos/IDeal";
 import IDealRepository from "../dtos/IDealRepository";
 import { Deal } from "../schemas/Deal";
 
@@ -28,5 +28,17 @@ export default class DealRepository implements IDealRepository {
     await this.ormRepository.save(deal);
 
     return deal;
+  }
+
+  public async findByDealId(id: number): Promise<Deal[]> {
+    const deal = await this.ormRepository.find({ deal_id: id })
+
+    return deal;
+  }
+
+  public async listDeals(): Promise<Deal[]> {
+    const deals = await this.ormRepository.find();
+
+    return deals;
   }
 }

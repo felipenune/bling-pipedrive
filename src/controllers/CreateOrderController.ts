@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { IDeal, IDealReturn } from "../dtos/IDeal";
+import { IDealReturn } from "../dtos/IDeal";
 import DealRepository from "../repositories/DealRepository";
 import OrderBlingService from "../services/OrderBlingService";
-import pipe from "../services/pipeUrl";
+import pipe from "../apis/pipeUrl";
 
-const api_token = 'e23d20cc4da337516714521aed2f32ae100a45b9'
+const api_token = process.env.API_KEY_PIPE
 const status = 'won'
 
 const orderBlingService = new OrderBlingService();
@@ -25,6 +25,12 @@ export default class CreateOrderController {
 
       let deal: IDealReturn
       for (deal of deals.data) {
+        const checkDeal = await dealRepository.findByDealId(deal.id)
+
+        if (checkDeal.length) {
+          continue;
+        }
+
         orderBlingService.execute(
           deal.org_name, 
           deal.cc_email,

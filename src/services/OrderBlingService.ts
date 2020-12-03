@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import bling from "../services/blingUrl";
+import bling from "../apis/blingUrl";
 
 var js2xmlparser = require('js2xmlparser')
 
@@ -33,7 +33,7 @@ export default class OrderBlingService {
     
     const xmlData = encodeURIComponent(js2xmlparser.parse('pedido', order, { declaration: { encoding: 'UTF-8' } }))
 
-    const apikey = '1024c9e994ed53ca6ed4653f0ce58d6aeccdead7b1dd6c42592caf3ce5fee25d888c0b4e'
+    const apikey = process.env.API_KEY_BLING
 
     const resp = await bling.post(`/pedido/json/`, null, {
       params: {
