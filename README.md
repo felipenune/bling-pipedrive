@@ -2,6 +2,7 @@
 
 * [About the project](#about)
 * [Steps for testing](#steps-to-run-this-project)
+* [.ENV example](#example-of-.env)
 * [Usage](#usage)
   * [Create order](#create-the-order-on-bling-and-save-in-mongoDB)
   * [List order](#list-all-orders-save-in-mongoDB)
@@ -18,7 +19,7 @@ This project is a integration of bling platform with pipedrive platform, created
 
 ## Example of .env
 
-```.env
+```
 API_KEY_PIPE=api_key_pipedrive
 API_KEY_BLING=api_key_bling
 MONGO_URL=url_do_mongo
