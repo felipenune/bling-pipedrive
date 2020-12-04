@@ -10,11 +10,17 @@
 ## About
 This project is a integration of bling platform with pipedrive platform, created for the LinkApi thecnical challenge. Build with NodeJS, Typescript, TypeOrm and mongoDB, you can get the deals with status "won" on pipedrive e create a order on bling, save the order on database.
 
-## Steps to run this project:
+## Steps to run this project
 
-1. Config the .env file
+1. Create and config the .env file
 2. Run `yarn` or `npm install` command
 3. Run `yarn start` or `npm start` command
+
+## Example of .env
+
+API_KEY_PIPE=api_key_pipedrive
+API_KEY_BLING=api_key_bling
+MONGO_URL=url_do_mongo
 
 ## Usage
 
