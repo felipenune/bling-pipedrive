@@ -1,12 +1,9 @@
-import {Entity, ObjectID, ObjectIdColumn, Column, CreateDateColumn, UpdateDateColumn} from "typeorm";
+import {Entity, ObjectID, ObjectIdColumn, Column, CreateDateColumn, UpdateDateColumn, PrimaryColumn} from "typeorm";
 
 @Entity('deals')
 export class Deal {
 
-@ObjectIdColumn()
-id: ObjectID;
-
-@Column()
+@PrimaryColumn()
 deal_id: number;
 
 @Column()
@@ -14,6 +11,9 @@ owner_name: string;
 
 @Column()
 contact: string;
+
+@Column()
+won_time: string;
 
 @Column()
 contact_email: string;
@@ -32,11 +32,4 @@ org_name: string;
 
 @Column()
 cc_email: string;
-
-@CreateDateColumn()
-created_at: string;
-
-@UpdateDateColumn()
-updated_at: string;
-
 }

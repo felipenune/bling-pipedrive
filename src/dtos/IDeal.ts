@@ -1,3 +1,4 @@
+//interface for type the response of pipedrive
 export interface IDeal {
   deal_id: number;
   org_id?: number;
@@ -21,7 +22,7 @@ export interface IDeal {
   visible_to?: string;
   close_time?: string;
   pipeline_id?: number;
-  won_time?: string;
+  won_time: string;
   first_won_time?: string;
   lost_time?: string;
   products_count?: number;
