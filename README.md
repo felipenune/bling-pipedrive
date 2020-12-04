@@ -18,9 +18,11 @@ This project is a integration of bling platform with pipedrive platform, created
 
 ## Example of .env
 
+```.env
 API_KEY_PIPE=api_key_pipedrive
 API_KEY_BLING=api_key_bling
 MONGO_URL=url_do_mongo
+```
 
 ## Usage
 
